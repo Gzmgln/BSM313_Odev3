@@ -18,10 +18,6 @@ obj/
 .cproject
 .mxproject
 
-# --- Sürücüler ve Sistem Dosyaları (Kullanıcı Talebi) ---
-# Not: Projeyi başka bir yerde açtığınızda CubeMX ile 'Generate Code' 
-# diyerek bu klasörü tekrar oluşturmanız gerekecektir.
-Drivers/
 
 # --- İşletim Sistemi Geçici Dosyaları ---
 Thumbs.db
