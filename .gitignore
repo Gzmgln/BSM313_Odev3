@@ -1,0 +1,28 @@
+# --- Derleme Çıktıları (Build Artifacts) ---
+build/
+bin/
+obj/
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.o
+*.d
+*.su
+
+# --- IDE ve Araç Klasörleri ---
+.vscode/
+.settings/
+.project
+.cproject
+.mxproject
+
+# --- Sürücüler ve Sistem Dosyaları (Kullanıcı Talebi) ---
+# Not: Projeyi başka bir yerde açtığınızda CubeMX ile 'Generate Code' 
+# diyerek bu klasörü tekrar oluşturmanız gerekecektir.
+Drivers/
+
+# --- İşletim Sistemi Geçici Dosyaları ---
+Thumbs.db
+.DS_Store
