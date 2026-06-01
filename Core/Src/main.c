@@ -150,9 +150,9 @@ int main(void)
           btn_state = 1;
           btn_press_time = HAL_GetTick(); // Basım anını kaydet
       } else if (btn_state == 1) {
-          // Eğer 3 saniyeden (3000 ms) fazla basılı tutulduysa [cite: 50]
+          // Eğer 3 saniyeden (3000 ms) fazla basılı tutulduysa
           if (HAL_GetTick() - btn_press_time >= 3000) { 
-              blink_count = 4; // Fabrika ayarlarına dön [cite: 51]
+              blink_count = 4; // Fabrika ayarlarına dön
               Save_Blink_Count_To_Flash((uint16_t)blink_count); // Flash'ı güncelle 
               
               // Animasyonu sıfırla ki kullanıcı değişikliği hemen görsün
@@ -170,7 +170,7 @@ int main(void)
           if (HAL_GetTick() - btn_press_time > 50) { // 50ms Debounce filtresi
               blink_count++;
               if (blink_count > 7) { 
-                  blink_count = 4; // 7 iken basılırsa 4 yap [cite: 44]
+                  blink_count = 4; // 7 iken basılırsa 4 yap
               }
               Save_Blink_Count_To_Flash((uint16_t)blink_count); // Flash'a yaz 
               
@@ -327,14 +327,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM2) {
         if (is_waiting) {
             wait_seconds++;
-            if (wait_seconds >= 5) { // 5 saniye bekleme durumu [cite: 40]
+            if (wait_seconds >= 5) { // 5 saniye bekleme durumu 
                 is_waiting = 0;
                 wait_seconds = 0;
                 current_blink = 0;
             }
         } else {
             if (led_state == 0) {
-                // LED'i yak (Bluepill'de PC13 genellikle Lojik 0 ile yanar) [cite: 38]
+                // LED'i yak (Bluepill'de PC13 genellikle Lojik 0 ile yanar)
                 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET); 
                 led_state = 1;
             } else {
@@ -344,7 +344,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 current_blink++; // Bir yanıp sönme döngüsü tamamlandı
                 
                 if (current_blink >= blink_count) {
-                    is_waiting = 1; // İstenen sayıya ulaşıldı, bekleme durumuna geç [cite: 41]
+                    is_waiting = 1; // İstenen sayıya ulaşıldı, bekleme durumuna geç 
                 }
             }
         }
